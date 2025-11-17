@@ -1,0 +1,111 @@
+>>>>>>>> INSERT 1 Etapa 1 e 2 - Planta Crescimento
+init
+plantar Milho
+turno
+plantar Batata
+turno
+end
+======== EXPECT
+$init
+$plantar Milho
+$turno
+Milho cresceu.
+$plantar Batata
+$turno
+Milho cresceu.
+Batata cresceu.
+$end
+<<<<<<<< FINISH
+
+
+>>>>>>>> INSERT 2 Etapa 2 - Morte da Planta (Sede)
+init
+plantar Trigo
+turno
+turno
+turno
+turno
+end
+======== EXPECT
+$init
+$plantar Trigo
+$turno
+Trigo cresceu.
+$turno
+Trigo cresceu.
+$turno
+Trigo morreu de sede.
+$turno
+Trigo está morta.
+$end
+<<<<<<<< FINISH
+
+
+>>>>>>>> INSERT 3 Etapa 3 - Jogador e Regar
+init
+plantar Girassol
+jogador Edu
+turno
+turno
+regar Edu Girassol
+turno
+turno
+end
+======== EXPECT
+$init
+$plantar Girassol
+$jogador Edu
+$turno
+Girassol cresceu.
+Jogador Edu descansou.
+$turno
+Girassol cresceu.
+Jogador Edu descansou.
+$regar Edu Girassol
+Girassol foi regada.
+$turno
+Girassol cresceu.
+Jogador Edu descansou.
+$turno
+Girassol cresceu.
+Jogador Edu descansou.
+$end
+<<<<<<<< FINISH
+
+
+>>>>>>>> INSERT 4 Etapa 4 - Frutos e Colheita
+init
+plantar Uva
+jogador Ana
+turno
+turno
+regar Ana Uva
+turno
+turno
+colher Ana Uva
+colher Ana Uva
+end
+======== EXPECT
+$init
+$plantar Uva
+$jogador Ana
+$turno
+Uva cresceu.
+Jogador Ana descansou.
+$turno
+Uva cresceu.
+Jogador Ana descansou.
+$regar Ana Uva
+Uva foi regada.
+$turno
+Uva cresceu.
+Jogador Ana descansou.
+$turno
+Uva cresceu.
+Jogador Ana descansou.
+$colher Ana Uva
+Jogador Ana colheu fruto de Uva!
+$colher Ana Uva
+A planta Uva não tem frutos.
+$end
+<<<<<<<< FINISH

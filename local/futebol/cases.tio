@@ -1,0 +1,239 @@
+>>>>>>>> INSERT 1 Criacao e Sumula (Polimorfismo)
+init Maracana
+criarJ Messi 35 111A Atacante
+criarT Guardiola 50 222B UEFAPro
+sumula
+end
+======== EXPECT
+$init Maracana
+$criarJ Messi 35 111A Atacante
+$criarT Guardiola 50 222B UEFAPro
+$sumula
+Relatório: Messi, Idade: 35, Posição: Atacante, Energia: 100, Cartões: 0
+Relatório: Guardiola, Idade: 50, Licença: UEFAPro, Estresse: 0, Em Campo: true
+$end
+<<<<<<<< FINISH
+
+
+>>>>>>>> INSERT 2 Acoes Jogador (Energia)
+init Maracana
+criarJ Messi 35 111A Atacante
+sumula
+passe Messi
+gol Messi
+sumula
+end
+======== EXPECT
+$init Maracana
+$criarJ Messi 35 111A Atacante
+$sumula
+Relatório: Messi, Idade: 35, Posição: Atacante, Energia: 100, Cartões: 0
+$passe Messi
+Jogador Messi deu um passe. Energia restante: 98
+$gol Messi
+GOOOL! Messi marcou! Energia restante: 93
+$sumula
+Relatório: Messi, Idade: 35, Posição: Atacante, Energia: 93, Cartões: 0
+$end
+<<<<<<<< FINISH
+
+
+>>>>>>>> INSERT 3 Jogador 1 Cartao
+init Maracana
+criarJ Pepe 40 333C Defensor
+sumula
+falta Pepe
+falta Pepe
+sumula
+falta Pepe
+sumula
+end
+======== EXPECT
+$init Maracana
+$criarJ Pepe 40 333C Defensor
+$sumula
+Relatório: Pepe, Idade: 40, Posição: Defensor, Energia: 100, Cartões: 0
+$falta Pepe
+Jogador Pepe fez uma falta. Total de faltas: 1
+$falta Pepe
+Jogador Pepe fez uma falta. Total de faltas: 2
+$sumula
+Relatório: Pepe, Idade: 40, Posição: Defensor, Energia: 100, Cartões: 0
+$falta Pepe
+Jogador Pepe fez uma falta. Total de faltas: 3
+Cartão amarelo para Pepe!
+$sumula
+Relatório: Pepe, Idade: 40, Posição: Defensor, Energia: 100, Cartões: 1
+$end
+<<<<<<<< FINISH
+
+
+>>>>>>>> INSERT 4 Jogador Expulsao (2 Cartoes)
+init Maracana
+criarJ Pepe 40 333C Defensor
+falta Pepe
+falta Pepe
+falta Pepe
+falta Pepe
+falta Pepe
+sumula
+falta Pepe
+sumula
+falta Pepe
+end
+======== EXPECT
+$init Maracana
+$criarJ Pepe 40 333C Defensor
+$falta Pepe
+Jogador Pepe fez uma falta. Total de faltas: 1
+$falta Pepe
+Jogador Pepe fez uma falta. Total de faltas: 2
+$falta Pepe
+Jogador Pepe fez uma falta. Total de faltas: 3
+Cartão amarelo para Pepe!
+$falta Pepe
+Jogador Pepe fez uma falta. Total de faltas: 4
+$falta Pepe
+Jogador Pepe fez uma falta. Total de faltas: 5
+$sumula
+Relatório: Pepe, Idade: 40, Posição: Defensor, Energia: 100, Cartões: 1
+$falta Pepe
+Jogador Pepe fez uma falta. Total de faltas: 6
+Cartão amarelo para Pepe! Foi expulso!
+$sumula
+Relatório: Pepe, Idade: 40, Posição: Defensor, Energia: 100, Cartões: 2
+$falta Pepe
+Jogador Pepe já foi expulso!
+$end
+<<<<<<<< FINISH
+
+
+>>>>>>>> INSERT 5 Acoes Tecnico (Estresse)
+init Maracana
+criarT Guardiola 50 222B UEFAPro
+criarJ Messi 35 111A Atacante
+sumula
+pausa Guardiola
+sumula
+substituir Guardiola Messi
+sumula
+end
+======== EXPECT
+$init Maracana
+$criarT Guardiola 50 222B UEFAPro
+$criarJ Messi 35 111A Atacante
+$sumula
+Relatório: Guardiola, Idade: 50, Licença: UEFAPro, Estresse: 0, Em Campo: true
+Relatório: Messi, Idade: 35, Posição: Atacante, Energia: 100, Cartões: 0
+$pausa Guardiola
+Técnico Guardiola pediu pausa. Nível de estresse: 1
+$sumula
+Relatório: Guardiola, Idade: 50, Licença: UEFAPro, Estresse: 1, Em Campo: true
+Relatório: Messi, Idade: 35, Posição: Atacante, Energia: 100, Cartões: 0
+$substituir Guardiola Messi
+Técnico Guardiola substituiu Messi. Nível de estresse: 3
+$sumula
+Relatório: Guardiola, Idade: 50, Licença: UEFAPro, Estresse: 3, Em Campo: true
+Relatório: Messi, Idade: 35, Posição: Atacante, Energia: 100, Cartões: 0
+$end
+<<<<<<<< FINISH
+
+
+>>>>>>>> INSERT 6 Tecnico Expulsao (Estresse)
+init Maracana
+criarT Mourinho 60 444D Pro
+pausa Mourinho
+pausa Mourinho
+pausa Mourinho
+pausa Mourinho
+pausa Mourinho
+sumula
+pausa Mourinho
+sumula
+pausa Mourinho
+end
+======== EXPECT
+$init Maracana
+$criarT Mourinho 60 444D Pro
+$pausa Mourinho
+Técnico Mourinho pediu pausa. Nível de estresse: 1
+$pausa Mourinho
+Técnico Mourinho pediu pausa. Nível de estresse: 2
+$pausa Mourinho
+Técnico Mourinho pediu pausa. Nível de estresse: 3
+$pausa Mourinho
+Técnico Mourinho pediu pausa. Nível de estresse: 4
+$pausa Mourinho
+Técnico Mourinho pediu pausa. Nível de estresse: 5
+$sumula
+Relatório: Mourinho, Idade: 60, Licença: Pro, Estresse: 5, Em Campo: true
+$pausa Mourinho
+Técnico Mourinho pediu pausa. Nível de estresse: 6
+EXPULSO! Mourinho xingou o juiz e foi expulso! (Estresse: 6)
+$sumula
+Relatório: Mourinho, Idade: 60, Licença: Pro, Estresse: 6, Em Campo: false
+$pausa Mourinho
+Técnico Mourinho já foi expulso.
+$end
+<<<<<<<< FINISH
+
+
+>>>>>>>> INSERT 7 Ligacao Precoce (Aquecimento)
+init Maracana
+criarJ Messi 35 111A Atacante
+criarT Guardiola 50 222B UEFAPro
+aquecer Messi
+aquecer Guardiola
+end
+======== EXPECT
+$init Maracana
+$criarJ Messi 35 111A Atacante
+$criarT Guardiola 50 222B UEFAPro
+$aquecer Messi
+Pessoa Messi está a aquecer.
+$aquecer Guardiola
+Pessoa Guardiola está a aquecer.
+$end
+<<<<<<<< FINISH
+
+
+>>>>>>>> INSERT 8 Tecnico Expulso Tenta Agir
+init Maracana
+criarT Mourinho 60 444D Pro
+criarJ Bale 34 777G Ponta
+pausa Mourinho
+pausa Mourinho
+pausa Mourinho
+pausa Mourinho
+pausa Mourinho
+pausa Mourinho
+sumula
+substituir Mourinho Bale
+pausa Mourinho
+end
+======== EXPECT
+$init Maracana
+$criarT Mourinho 60 444D Pro
+$criarJ Bale 34 777G Ponta
+$pausa Mourinho
+Técnico Mourinho pediu pausa. Nível de estresse: 1
+$pausa Mourinho
+Técnico Mourinho pediu pausa. Nível de estresse: 2
+$pausa Mourinho
+Técnico Mourinho pediu pausa. Nível de estresse: 3
+$pausa Mourinho
+Técnico Mourinho pediu pausa. Nível de estresse: 4
+$pausa Mourinho
+Técnico Mourinho pediu pausa. Nível de estresse: 5
+$pausa Mourinho
+Técnico Mourinho pediu pausa. Nível de estresse: 6
+EXPULSO! Mourinho xingou o juiz e foi expulso! (Estresse: 6)
+$sumula
+Relatório: Mourinho, Idade: 60, Licença: Pro, Estresse: 6, Em Campo: false
+Relatório: Bale, Idade: 34, Posição: Ponta, Energia: 100, Cartões: 0
+$substituir Mourinho Bale
+Técnico Mourinho tentou substituir, mas já foi expulso.
+$pausa Mourinho
+Técnico Mourinho já foi expulso.
+$end
+<<<<<<<< FINISH
