@@ -1,0 +1,87 @@
+>>>>>>>> INSERT 1 Passo 1 - Pokemon Base e Tackle
+init
+pokemon Rattata
+tackle Rattata
+dano Rattata 50
+tackle Rattata
+end
+======== EXPECT
+$init
+$pokemon Rattata
+$tackle Rattata
+Rattata usou Tackle!
+$dano Rattata 50
+Rattata recebeu dano. HP: 50
+$tackle Rattata
+Rattata usou Tackle!
+$end
+<<<<<<<< FINISH
+
+
+>>>>>>>> INSERT 2 Passo 2 - Heranca e Especial
+init
+pikachu AshPika
+bulbasaur Dino
+especial AshPika
+especial Dino
+tackle Dino
+end
+======== EXPECT
+$init
+$pikachu AshPika
+$bulbasaur Dino
+$especial AshPika
+Pikachu AshPika usou Thunder Shock!
+$especial Dino
+Bulbasaur Dino usou Vine Whip!
+$tackle Dino
+Dino usou Tackle!
+$end
+<<<<<<<< FINISH
+
+
+>>>>>>>> INSERT 3 Passo 3 - Dano e Desmaio
+init
+pikachu Sparky
+dano Sparky 90
+tackle Sparky
+dano Sparky 20
+tackle Sparky
+especial Sparky
+end
+======== EXPECT
+$init
+$pikachu Sparky
+$dano Sparky 90
+Sparky recebeu dano. HP: 10
+$tackle Sparky
+Sparky usou Tackle!
+$dano Sparky 20
+Sparky desmaiou!
+$tackle Sparky
+Sparky esta desmaiado e nao pode atacar.
+$especial Sparky
+Sparky esta desmaiado e nao pode atacar.
+$end
+<<<<<<<< FINISH
+
+
+>>>>>>>> INSERT 4 Passo 4 - Polimorfismo em Grupo
+init
+pikachu Pika1
+bulbasaur Saur1
+pikachu Pika2
+batalha_grupo
+end
+======== EXPECT
+$init
+$pikachu Pika1
+$bulbasaur Saur1
+$pikachu Pika2
+$batalha_grupo
+--- ATAQUE EM GRUPO ---
+Pikachu Pika1 usou Thunder Shock!
+Bulbasaur Saur1 usou Vine Whip!
+Pikachu Pika2 usou Thunder Shock!
+$end
+<<<<<<<< FINISH
