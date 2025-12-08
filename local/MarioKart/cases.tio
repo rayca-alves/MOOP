@@ -1,0 +1,83 @@
+>>>>>>>> INSERT 1 Passo 1 - Moedas
+init Mario
+moeda
+moeda
+moeda
+end
+======== EXPECT
+$init Mario
+$moeda
+Mario pegou uma moeda! Total: 1
+$moeda
+Mario pegou uma moeda! Total: 2
+$moeda
+Mario pegou uma moeda! Total: 3
+$end
+<<<<<<<< FINISH
+>>>>>>>> INSERT 2 Passo 3 - Pegar Itens Normal
+init Luigi
+item Cogumelo
+item CascoVerde
+end
+======== EXPECT
+$init Luigi
+$item Cogumelo
+Luigi pegou Cogumelo! Slot 1/3
+$item CascoVerde
+Luigi pegou CascoVerde! Slot 2/3
+$end
+<<<<<<<< FINISH
+>>>>>>>> INSERT 3 Passo 4 - Erro Inventario Cheio
+init Peach
+item Banana
+item Cogumelo
+item Estrela
+item CascoVermelho
+end
+======== EXPECT
+$init Peach
+$item Banana
+Peach pegou Banana! Slot 1/3
+$item Cogumelo
+Peach pegou Cogumelo! Slot 2/3
+$item Estrela
+Peach pegou Estrela! Slot 3/3
+$item CascoVermelho
+ERRO: O inventario de Peach esta cheio! Nao pode pegar mais itens.
+$end
+<<<<<<<< FINISH
+>>>>>>>> INSERT 4 Passo 3 - Usar Item Normal
+init Yoshi
+item Banana
+item CascoVerde
+usar
+usar
+end
+======== EXPECT
+$init Yoshi
+$item Banana
+Yoshi pegou Banana! Slot 1/3
+$item CascoVerde
+Yoshi pegou CascoVerde! Slot 2/3
+$usar
+Yoshi usou Banana!
+$usar
+Yoshi usou CascoVerde!
+$end
+<<<<<<<< FINISH
+>>>>>>>> INSERT 5 Passo 4 - Erro Sem Item
+init Toad
+item Cogumelo
+usar
+usar
+end
+======== EXPECT
+$init Toad
+$item Cogumelo
+Toad pegou Cogumelo! Slot 1/3
+$usar
+Toad usou Cogumelo!
+$usar
+ERRO: Toad nao possui itens para usar!
+$end
+<<<<<<<< FINISH
