@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-12-15_01-18-56",
+            "content": "public class Pikachu extends Pokemon {\n    public Pikachu(String nome) {\n        super(nome);\n    }\n    \n    public String ataqueEspecial(){\n        if(hp <= 0){\n            energia -= 15;\n            return \"Pikachu \" + nome + \" usou Thunder Shock!\";\n        } else { \n            return nome + \" est\u00e1 desmaiado e n\u00e3o pode atacar.\";\n        }\n    }\n}",
+            "lines": "14"
+        }
+    ]
+}

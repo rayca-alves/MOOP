@@ -1,0 +1,20 @@
+2025-12-15 00:40:01, MOVE, v:1, k:local@Pokemon Base, mode:PICK
+2025-12-15 00:40:09, MOVE, v:1, k:local@Pokemon Base, mode:BACK
+2025-12-15 00:43:29, MOVE, v:1, k:local@Pokemon Base, mode:PICK
+2025-12-15 00:43:31, EXEC, v:1, k:local@Pokemon Base, mode:FULL, rate:0, size:142
+2025-12-15 00:43:33, EXEC, v:1, k:local@Pokemon Base, mode:FULL, rate:0
+2025-12-15 00:43:40, MOVE, v:1, k:local@Pokemon Base, mode:BACK
+2025-12-15 01:07:07, MOVE, v:1, k:local@Pokemon Base, mode:PICK
+2025-12-15 01:07:08, EXEC, v:1, k:local@Pokemon Base, mode:FULL, size:163, fail:COMP
+2025-12-15 01:07:09, EXEC, v:1, k:local@Pokemon Base, mode:FULL, fail:COMP
+2025-12-15 01:08:04, EXEC, v:1, k:local@Pokemon Base, mode:FULL, size:163, fail:COMP
+2025-12-15 01:13:25, EXEC, v:1, k:local@Pokemon Base, mode:FULL, size:162, fail:COMP
+2025-12-15 01:18:57, EXEC, v:1, k:local@Pokemon Base, mode:FULL, rate:0, size:160
+2025-12-15 01:20:41, EXEC, v:1, k:local@Pokemon Base, mode:FULL, size:161, fail:COMP
+2025-12-15 01:20:44, EXEC, v:1, k:local@Pokemon Base, mode:FULL, fail:COMP
+2025-12-15 01:22:28, EXEC, v:1, k:local@Pokemon Base, mode:FULL, rate:0, size:161
+2025-12-15 01:24:13, EXEC, v:1, k:local@Pokemon Base, mode:FULL, rate:25, size:161
+2025-12-15 01:27:19, EXEC, v:1, k:local@Pokemon Base, mode:FULL, rate:25, size:161
+2025-12-15 01:27:37, EXEC, v:1, k:local@Pokemon Base, mode:FULL, rate:75, size:161
+2025-12-15 01:30:05, EXEC, v:1, k:local@Pokemon Base, mode:FULL, rate:75, size:161
+2025-12-15 01:34:44, EXEC, v:1, k:local@Pokemon Base, mode:FULL, rate:100, size:162
