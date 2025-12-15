@@ -11,7 +11,10 @@ class Pokemon {
     protected boolean desmaiado;
 
     public Pokemon(String nome) {
-        // TODO: Inicie nome. HP=100, Energia=50, desmaiado=false
+        this.nome = nome;
+        this.hp = 100;
+        this.energia = 50;
+        this.desmaiado = false;
     }
 
     public String getNome() {
@@ -20,18 +23,23 @@ class Pokemon {
 
     // Ligação Precoce (Early Binding): Método comum a todos
     public String tackle() {
-        // PASSO 3: Se desmaiado, retorne "[nome] esta desmaiado e nao pode atacar."
-        
-        // PASSO 1: Verifique se energia >= 5. Se sim, gaste 5 e retorne "[nome] usou Tackle!"
-        // Se não, retorne "[nome] esta exausto."
-        return "";
-    }
+        if(energia >= 5){
+            energia -= 5;
+            return nome + " usou Tackle!";
+         } else {
+            return nome + " está exausto.";
+         }}
+
 
     public String receberDano(int dano) {
-        // PASSO 1: Reduza o HP. Se HP <= 0, hp=0, desmaiado=true.
-        // Se desmaiou, retorne "[nome] desmaiou!"
-        // Se não, retorne "[nome] recebeu dano. HP: " + hp
-        return "";
+        hp -= dano;
+        if(hp <= 0){
+            desmaiado = true;
+            hp = 0;
+            return nome + " desmaiou!";
+        } else {
+            return nome + " recebeu " + dano + " de dano. HP atual: " + hp;
+        }
     }
 
     // Ligação Tardia (Late Binding): Será sobrescrito
@@ -43,22 +51,6 @@ class Pokemon {
 // ==================================================================================
 // PASSO 2: SUBCLASSES (HERANÇA)
 // ==================================================================================
-
-// class Pikachu extends Pokemon {
-    // TODO: Construtor (super)
-    
-    // TODO: Sobrescreva ataqueEspecial().
-    // PASSO 3: Verifique desmaiado.
-    // Gaste 15 energia. Retorne "Pikachu [nome] usou Thunder Shock!"
-// }
-
-// class Bulbasaur extends Pokemon {
-    // TODO: Construtor (super)
-
-    // TODO: Sobrescreva ataqueEspecial().
-    // PASSO 3: Verifique desmaiado.
-    // Gaste 15 energia. Retorne "Bulbasaur [nome] usou Vine Whip!"
-// }
 
 // ==================================================================================
 // GERENCIADOR (ARENA)
@@ -118,13 +110,11 @@ public class Main {
                         break;
 
                     case "pikachu": // PASSO 2
-                        // TODO: DESCOMENTE
-                        // arena.registrar(new Pikachu(tokens[1]));
+                        arena.registrar(new Pikachu(tokens[1]));
                         break;
                     
                     case "bulbasaur": // PASSO 2
-                        // TODO: DESCOMENTE
-                        // arena.registrar(new Bulbasaur(tokens[1]));
+                        arena.registrar(new Bulbasaur(tokens[1]));
                         break;
 
                     case "especial": // PASSO 2
