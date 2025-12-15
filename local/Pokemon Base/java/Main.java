@@ -23,12 +23,13 @@ class Pokemon {
 
     // Ligação Precoce (Early Binding): Método comum a todos
     public String tackle() {
-        if(energia >= 5){
+        if(!desmaiado){
             energia -= 5;
             return nome + " usou Tackle!";
          } else {
-            return nome + " está exausto.";
-         }}
+            return nome + " esta desmaiado e nao pode atacar.";
+         }
+    }
 
 
     public String receberDano(int dano) {
@@ -38,7 +39,7 @@ class Pokemon {
             hp = 0;
             return nome + " desmaiou!";
         } else {
-            return nome + " recebeu " + dano + " de dano. HP atual: " + hp;
+            return nome + " recebeu dano. HP: " + hp;
         }
     }
 
@@ -51,6 +52,35 @@ class Pokemon {
 // ==================================================================================
 // PASSO 2: SUBCLASSES (HERANÇA)
 // ==================================================================================
+class Pikachu extends Pokemon {
+    public Pikachu(String nome) {
+        super(nome);
+    }
+    
+    public String ataqueEspecial(){
+        if(!desmaiado){
+            energia -= 15;
+            return "Pikachu " + nome + " usou Thunder Shock!";
+        } else { 
+            return nome + " esta desmaiado e nao pode atacar.";
+        }
+    }
+}
+
+class Bulbasaur extends Pokemon {
+    public Bulbasaur(String nome) {
+        super(nome);
+    }
+   
+   public String ataqueEspecial(){
+        if(!desmaiado){
+            energia -= 15;
+            return "Bulbasaur " + nome + " usou Vine Whip!";
+        } else { 
+            return nome + " esta desmaiado e nao pode atacar.";
+        }
+    }
+}
 
 // ==================================================================================
 // GERENCIADOR (ARENA)
